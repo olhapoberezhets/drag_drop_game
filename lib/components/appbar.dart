@@ -35,12 +35,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Text(
                     'Welcome',
-                    style: kTitleStyle.copyWith(fontSize: 30.0.sp),
-                  ),
-                  SizedBox(height: 30.0.h),
-                  Text(
-                    '🐰',
-                    style: TextStyle(fontSize: 45.0.sp),
+                    style: kTitleStyle.copyWith(fontSize: 35.0.sp),
                   ),
                 ],
               ),
@@ -54,6 +49,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => isHomeScreen
-      ? const Size(double.infinity, 200.0)
+      ? const Size(double.infinity, 150.0)
       : const Size(double.infinity, 50.0);
 }

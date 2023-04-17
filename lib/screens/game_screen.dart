@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:drag_drop_game/components/appbar.dart';
 import 'package:drag_drop_game/components/number_box.dart';
 import 'package:drag_drop_game/utilities/constans.dart';
@@ -22,6 +23,8 @@ class _GameScreenState extends State<GameScreen> {
   };
 
   int seed = 0;
+
+  final player = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -95,6 +98,7 @@ class _GameScreenState extends State<GameScreen> {
         setState(() {
           pair[number] = true;
         });
+        player.play(AssetSource('great.wav'));
       },
       onLeave: (data) {},
     );

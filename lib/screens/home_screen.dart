@@ -11,29 +11,40 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: appColor,
-      appBar: CustomAppBar(toolbarHeight: 200.0.h),
-      body: Align(
-        alignment: Alignment.bottomRight,
-        child: Padding(
-          padding: EdgeInsets.only(right: 30.0.w, bottom: 40.0.h),
-          child: SizedBox(
-            width: 150.0.w,
-            height: 40.0.h,
-            child: OutlinedButton(
-              style: kButtonStyle,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const GameScreen()),
-                );
-              },
-              child: const Icon(
-                Icons.arrow_forward_ios,
-                color: whiteColor,
+      appBar: CustomAppBar(toolbarHeight: 150.0.h),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Text(
+            '🐰',
+            style: TextStyle(fontSize: 140.0.sp),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: EdgeInsets.only(right: 30.0.w, bottom: 40.0.h),
+              child: SizedBox(
+                width: 150.0.w,
+                height: 40.0.h,
+                child: OutlinedButton(
+                  style: kButtonStyle,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const GameScreen()),
+                    );
+                  },
+                  child: const Icon(
+                    Icons.arrow_forward_ios,
+                    color: whiteColor,
+                  ),
+                ),
               ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
